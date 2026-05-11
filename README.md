@@ -1,16 +1,33 @@
-# React + Vite
+# WARLOS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website WARLOS berbasis React + Vite.
 
-Currently, two official plugins are available:
+## Menjalankan di lokal
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Install dependency:
 
-## React Compiler
+	- `npm ci`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Jalankan mode development:
 
-## Expanding the ESLint configuration
+	- `npm run dev`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Build production:
+
+	- `npm run build`
+
+4. Preview build:
+
+	- `npm run preview`
+
+## Deploy ke Vercel
+
+Repo ini sudah disiapkan untuk Vercel (Vite + SPA routing) lewat `vercel.json`.
+
+Di Vercel:
+
+- Framework Preset: `Vite`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+
+Lalu pilih **Deploy**. Untuk routing React Router (mis. refresh di URL selain `/`), konfigurasi rewrite sudah ditangani.
