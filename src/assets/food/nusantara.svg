@@ -1,0 +1,30 @@
+<svg width="920" height="640" viewBox="0 0 920 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="80" y1="80" x2="860" y2="580" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3A5F43"/>
+      <stop offset="0.45" stop-color="#F49B1A" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#101A13"/>
+    </linearGradient>
+    <radialGradient id="r" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(280 190) rotate(54) scale(520 420)">
+      <stop stop-color="#FFEFC7" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#101A13" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect x="0" y="0" width="920" height="640" rx="36" fill="url(#g)"/>
+  <rect x="0" y="0" width="920" height="640" rx="36" fill="url(#r)"/>
+
+  <!-- plate -->
+  <ellipse cx="470" cy="390" rx="250" ry="120" fill="rgba(255,255,255,0.10)"/>
+  <ellipse cx="470" cy="390" rx="210" ry="98" fill="rgba(16,26,19,0.55)"/>
+
+  <!-- food silhouette -->
+  <path d="M330 410c40-78 118-128 210-128 64 0 118 18 152 56 28 31 38 77 6 114-30 36-82 54-160 54-92 0-188-22-208-96z" fill="rgba(255,255,255,0.12)"/>
+  <path d="M360 398c20-56 88-96 170-96 58 0 108 16 132 46 20 24 24 56 2 78-24 24-66 36-130 36-76 0-150-18-174-64z" fill="rgba(255,255,255,0.18)"/>
+
+  <!-- garnish dots -->
+  <g opacity="0.6">
+    <circle cx="420" cy="348" r="6" fill="#FFE09A"/>
+    <circle cx="500" cy="356" r="5" fill="#FFC96A"/>
+    <circle cx="570" cy="380" r="6" fill="#FFEFC7"/>
+  </g>
+</svg>
