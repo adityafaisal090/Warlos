@@ -10,34 +10,7 @@ import SectionHeading from '../ui/SectionHeading.jsx'
 
 function WaveDivider({ className = '' }) {
   return (
-    <div className={`relative hidden w-[72px] md:block ${className}`} aria-hidden="true">
-      <svg
-        viewBox="0 0 72 720"
-        className="absolute inset-0 h-full w-full opacity-50"
-      >
-        <defs>
-          <linearGradient id="wg" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="rgba(255,255,255,0)" />
-            <stop offset="0.12" stopColor="rgba(255,239,199,0.36)" />
-            <stop offset="0.55" stopColor="rgba(58,95,67,0.55)" />
-            <stop offset="0.88" stopColor="rgba(255,201,106,0.30)" />
-            <stop offset="1" stopColor="rgba(255,255,255,0)" />
-          </linearGradient>
-        </defs>
-        <motion.path
-          d="M36 0C22 54 50 96 36 150C22 204 50 246 36 300C22 354 50 396 36 450C22 504 50 546 36 600C22 654 50 696 36 720"
-          fill="none"
-          stroke="url(#wg)"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeDasharray="12 14"
-          initial={{ strokeDashoffset: 0 }}
-          whileInView={{ strokeDashoffset: 52 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 1.6, ease: 'easeInOut' }}
-        />
-      </svg>
-    </div>
+    <div className={`relative hidden w-[72px] md:block ${className}`} aria-hidden="true" />
   )
 }
 
@@ -107,10 +80,6 @@ function NusantaraOrnaments() {
   return (
     <>
       <motion.div
-        className="pointer-events-none absolute left-6 top-6 h-16 w-16 rounded-2xl bg-[#5c1d24]/30 ring-soft"
-        variants={{ rest: { opacity: 0.85 }, hover: { opacity: 1 } }}
-      />
-      <motion.div
         className="pointer-events-none absolute right-6 bottom-7 h-20 w-20 rounded-full bg-warmgold-400/10 blur-2xl"
         variants={{ rest: { opacity: 0.35 }, hover: { opacity: 0.8 } }}
       />
@@ -154,11 +123,6 @@ function NusantaraOrnaments() {
 function MiddleEastOrnaments() {
   return (
     <>
-      <motion.div
-        className="pointer-events-none absolute left-6 top-6 h-14 w-14 rounded-2xl bg-mountain-700/18 ring-soft"
-        variants={{ rest: { opacity: 0.75 }, hover: { opacity: 1 } }}
-      />
-
       <motion.svg
         className="pointer-events-none absolute right-6 top-7 h-24 w-24"
         viewBox="0 0 120 120"
@@ -200,11 +164,6 @@ function MiddleEastOrnaments() {
 function ChineseOrnaments() {
   return (
     <>
-      <motion.div
-        className="pointer-events-none absolute left-6 top-6 h-14 w-14 rounded-2xl bg-[#7a1119]/22 ring-soft"
-        variants={{ rest: { opacity: 0.75 }, hover: { opacity: 1 } }}
-      />
-
       <motion.div
         className="pointer-events-none absolute right-6 top-8 h-28 w-24 rounded-2xl bg-[#ff3b3b]/10 ring-soft"
         variants={{ rest: { opacity: 0, y: -10 }, hover: { opacity: 1, y: 0 } }}
@@ -275,7 +234,6 @@ function CuisineCard({
       />
 
       <div className="pointer-events-none absolute inset-0 opacity-25">
-        <div className="absolute inset-0 bg-soft-grid bg-[length:52px_52px]" />
         <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-black/40" />
       </div>
 

@@ -34,6 +34,63 @@ function GalleryTiles({ tint = 'from-mountain-700/20 via-white/5 to-warmgold-400
 export default function CategoryPage({ data }) {
   const smooth = useSmoothScroll()
 
+  const renderMenuEntry = (m, idx) => {
+    const type = m?.type ?? 'item'
+
+    if (type === 'section') {
+      return (
+        <div className="md:col-span-2">
+          <div className={`${idx === 0 ? '' : 'mt-6 '}border-b border-white/10 pb-3`}>
+            <p className="text-lg font-semibold tracking-tight text-cream-100">{m.title}</p>
+          </div>
+        </div>
+      )
+    }
+
+    if (type === 'subsection') {
+      return (
+        <div className="md:col-span-2">
+          <div className="mt-2">
+            <p className="text-sm font-semibold tracking-[0.22em] text-cream-200/70">{m.title}</p>
+          </div>
+        </div>
+      )
+    }
+
+    if (type === 'note') {
+      return (
+        <div className="md:col-span-2">
+          <p className="mt-1 text-sm italic leading-relaxed text-cream-100/60">{m.text}</p>
+        </div>
+      )
+    }
+
+    return (
+      <div className="group relative overflow-hidden rounded-2xl p-6 glass ring-soft shadow-glass">
+        <div className="absolute -right-14 -top-14 h-44 w-44 rounded-full bg-mountain-700/14 blur-3xl transition-opacity duration-300 group-hover:opacity-90" />
+        <div className="flex items-start justify-between gap-6">
+          <div>
+            <p className="text-base font-semibold text-cream-100">{m.name}</p>
+            {m.desc ? <p className="mt-2 text-sm leading-relaxed text-cream-100/70">{m.desc}</p> : null}
+          </div>
+          {m.price ? (
+            <p className="shrink-0 rounded-full bg-white/5 px-4 py-2 text-sm font-medium text-cream-100/85 ring-soft">
+              {m.price}
+            </p>
+          ) : null}
+        </div>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Button variant="primary" className="px-4 py-2">
+            Order
+          </Button>
+          <Button variant="ghost" className="px-4 py-2">
+            Tanya Detail
+          </Button>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className={`relative min-h-screen overflow-x-hidden bg-gradient-to-b ${data.theme.bg}`}>
       <div className="relative noise">
@@ -93,23 +150,8 @@ export default function CategoryPage({ data }) {
 
             <div className="mt-12 grid gap-6 md:grid-cols-2">
               {data.menu.map((m, idx) => (
-                <Reveal key={m.name} delay={0.05 * idx}>
-                  <div className="group relative overflow-hidden rounded-2xl p-6 glass ring-soft shadow-glass">
-                    <div className="absolute -right-14 -top-14 h-44 w-44 rounded-full bg-mountain-700/14 blur-3xl transition-opacity duration-300 group-hover:opacity-90" />
-                    <div className="flex items-start justify-between gap-6">
-                      <div>
-                        <p className="text-base font-semibold text-cream-100">{m.name}</p>
-                        <p className="mt-2 text-sm leading-relaxed text-cream-100/70">{m.desc}</p>
-                      </div>
-                      <p className="shrink-0 rounded-full bg-white/5 px-4 py-2 text-sm font-medium text-cream-100/85 ring-soft">
-                        {m.price}
-                      </p>
-                    </div>
-                    <div className="mt-5 flex flex-wrap gap-3">
-                      <Button variant="primary" className="px-4 py-2">Order</Button>
-                      <Button variant="ghost" className="px-4 py-2">Tanya Detail</Button>
-                    </div>
-                  </div>
+                <Reveal key={`${m?.type ?? 'item'}-${m?.title ?? m?.name ?? 'entry'}-${idx}`} delay={0.05 * idx}>
+                  {renderMenuEntry(m, idx)}
                 </Reveal>
               ))}
             </div>

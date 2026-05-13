@@ -19,7 +19,6 @@ export default function SiteLoader() {
         >
           <div className="relative h-full w-full overflow-hidden">
             <div className="absolute inset-0 bg-hero-radial opacity-70" />
-            <div className="absolute inset-0 soft-grid animated-grid opacity-25" />
 
             <div className="relative flex h-full w-full items-center justify-center">
               <motion.div
